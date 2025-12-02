@@ -3,8 +3,9 @@
 #define MCF_K_SHORTEST_PATH_HPP
 
 #include <limits>
-#include <mcf/graph.hpp>
 #include <vector>
+
+#include "mcf/graph.hpp"
 
 namespace mcf {
 

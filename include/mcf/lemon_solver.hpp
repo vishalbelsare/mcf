@@ -5,9 +5,11 @@
 
 #include <lemon/cost_scaling.h>
 #include <lemon/smart_graph.h>
-#include <mcf/graph.hpp>
-#include <mcf/solver.hpp>
+
 #include <memory>
+
+#include "mcf/graph.hpp"
+#include "mcf/solver.hpp"
 
 namespace mcf {
 

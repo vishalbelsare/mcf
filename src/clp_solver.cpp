@@ -1,6 +1,6 @@
 // vim: expandtab:ts=2:sw=2
 #ifdef MCF_USE_Clp
-#include <mcf/clp_solver.hpp>
+#include "mcf/clp_solver.hpp"
 
 #include <ClpSimplex.hpp>
 #include <CoinBuild.hpp>
@@ -10,8 +10,8 @@
 #include <sstream>
 #include <vector>
 
-#include <mcf/internal/util.hpp>
-#include <mcf/logging.hpp>
+#include "mcf/internal/util.hpp"
+#include "mcf/logging.hpp"
 
 namespace mcf {
 

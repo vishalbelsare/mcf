@@ -1,5 +1,5 @@
 # vim: expandtab:ts=2:sw=2
-cmake_minimum_required(VERSION 3.2.0)
+cmake_minimum_required(VERSION 3.30.0)
 project(mcf)
 
 if (NOT CMAKE_RUNTIME_OUTPUT_DIRECTORY)
@@ -11,9 +11,6 @@ endif()
 if (NOT CMAKE_ARCHIVE_OUTPUT_DIRECTORY)
     set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 endif()
-if (NOT PYTHON_OUTPUT_DIRECTORY)
-  set(PYTHON_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/python_lib")
-endif()
 
 set(MCF_EXTERNAL_INSTALL_DIR
   "${CMAKE_BINARY_DIR}/external-install"
@@ -24,6 +21,7 @@ set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} ${MCF_EXTERNAL_INSTALL_DIR})
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 include(cmake/DefineCompilerFlags.cmake)
 
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 find_package(Boost QUIET)
 if (Boost_FOUND)
@@ -168,10 +166,10 @@ endif ()
 if (MCF_BUILD_PYTHON)
   find_package(pybind11 REQUIRED)
 
-  pybind11_add_module(pymcf ${MCF_LIB_SRC} python/pymcf.cpp)
-  target_link_libraries(pymcf ${MCF_LIBRARIES})
+  pybind11_add_module(pymcf MODULE ${MCF_LIB_SRC} python/pymcf.cpp)
+  target_link_libraries(pymcf PRIVATE ${MCF_LIBRARIES})
+  target_compile_definitions(pymcf PRIVATE ${MCF_DEFINITIONS})
+  target_include_directories(pymcf PRIVATE ${MCF_INCLUDE_DIRS})
   set_target_properties(pymcf PROPERTIES OUTPUT_NAME mcf)
-  set_target_properties(pymcf PROPERTIES
-    LIBRARY_OUTPUT_DIRECTORY ${PYTHON_OUTPUT_DIRECTORY}
-    )
+  install(TARGETS pymcf LIBRARY DESTINATION .)
 endif ()

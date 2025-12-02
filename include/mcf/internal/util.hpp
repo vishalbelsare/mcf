@@ -2,13 +2,10 @@
 #ifndef MCF_UTIL_HPP
 #define MCF_UTIL_HPP
 
-#include <sstream>
-#include <stdexcept>
-#include <string>
 #include <type_traits>
 #include <vector>
 
-#include <mcf/graph.hpp>
+#include "mcf/graph.hpp"
 
 #define ASSERT_NOTNULL(pointer)                                        \
   if ((pointer) == nullptr) {                                          \

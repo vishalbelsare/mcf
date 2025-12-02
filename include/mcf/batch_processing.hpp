@@ -2,11 +2,13 @@
 #ifndef MCF_BATCH_PROCESSING_HPP
 #define MCF_BATCH_PROCESSING_HPP
 
-#include <mcf/graph.hpp>
-#include <mcf/k_shortest_path_solver.hpp>
-
+#include <cstdint>
 #include <map>
 #include <unordered_map>
+#include <vector>
+
+#include "mcf/graph.hpp"
+#include "mcf/k_shortest_path_solver.hpp"
 
 namespace mcf {
 

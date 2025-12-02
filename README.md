@@ -30,6 +30,20 @@ The library ships with a Makefile to install these dependencies locally.
 
 ## Installation
 
+### Python
+
+The Python bindings can be installed with `pip`.
+The following command installs only the k-shortest-path solver, which is usually sufficient since it is the fastest solver anyway:
+
+```
+pip install git+https://github.com/nwojke/mcf
+```
+
+There is currently no Python example available, so you will need to consult the binding [source](python/pymcf.cpp) to get an overview of the API.
+After that, take a look at the [C++ example](examples/min_cost_flow_example.cpp) and try to replicate it in Python.
+
+### C++ 
+
 First, clone the repository and create a build directory:
 ```
 git clone https://github.com/nwojke/mcf.git
@@ -44,7 +58,7 @@ called from within the build directory):
 make -f ../Makefile.external pybind11
 
 # Alternatively, you may choose to install all dependencies, but this may take
-# a while.
+# a while (Remark: likely broken because it requires an old CMake version).
 make -f ../Makefile.external
 ```
 Then, configure the project and build the library (again, we are inside the

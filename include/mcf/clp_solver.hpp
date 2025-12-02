@@ -3,10 +3,11 @@
 #define MCF_CLP_SOLVER_HPP
 #ifdef MCF_USE_Clp
 
-#include <mcf/graph.hpp>
-#include <mcf/solver.hpp>
 #include <memory>
 #include <vector>
+
+#include "mcf/graph.hpp"
+#include "mcf/solver.hpp"
 
 class ClpSimplex;
 

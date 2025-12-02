@@ -1,0 +1,18 @@
+[build-system]
+requires = [
+    "scikit-build-core>=0.8.1",
+    "cmake>=3.30",
+    "pybind11>=2.10.0",
+]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "mcf"
+version = "1.0.0"
+authors = [
+  { name="Nicolai Wojke", email="nwojke@uni-koblenz.de" },
+]
+description = "A small library for solving minimum cost flow problems"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file="LICENSE" }

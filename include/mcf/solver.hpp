@@ -2,8 +2,9 @@
 #ifndef MCF_SOLVER_HPP
 #define MCF_SOLVER_HPP
 
-#include <mcf/graph.hpp>
 #include <vector>
+
+#include "mcf/graph.hpp"
 
 namespace mcf {
 

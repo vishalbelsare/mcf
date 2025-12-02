@@ -1,9 +1,9 @@
 // vim: expandtab:ts=2:sw=2
-#include <mcf/k_shortest_path_solver.hpp>
+#include "mcf/k_shortest_path_solver.hpp"
 
-#include <mcf/internal/k_shortest_path.hpp>
-#include <mcf/internal/util.hpp>
-#include <mcf/logging.hpp>
+#include "mcf/internal/k_shortest_path.hpp"
+#include "mcf/internal/util.hpp"
+#include "mcf/logging.hpp"
 
 namespace mcf {
 

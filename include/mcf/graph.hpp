@@ -2,7 +2,6 @@
 #ifndef MCF_GRAPH_HPP
 #define MCF_GRAPH_HPP
 
-#include <tuple>
 #include <vector>
 
 namespace mcf {

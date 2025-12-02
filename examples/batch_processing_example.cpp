@@ -1,6 +1,5 @@
 // vim: expandtab:ts=2:sw=2
 #include <iostream>
-
 #include <mcf/batch_processing.hpp>
 #include <mcf/graph.hpp>
 #include <mcf/logging.hpp>

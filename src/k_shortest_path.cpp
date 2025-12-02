@@ -1,5 +1,5 @@
 // vim: expandtab:ts=2:sw=2
-#include <mcf/internal/k_shortest_path.hpp>
+#include "mcf/internal/k_shortest_path.hpp"
 
 #include <algorithm>
 #include <cassert>
@@ -171,7 +171,7 @@ void ShortestPathDijkstraLazyDeletion(
   std::priority_queue<std::pair<double, int>,
                       std::vector<std::pair<double, int>>,
                       std::greater<std::pair<double, int>>>
-  queue(std::greater<std::pair<double, int>>(), std::move(container));
+      queue(std::greater<std::pair<double, int>>(), std::move(container));
 
   // Initialize maps to "no predecessor" and infinity cost.
   node_index_to_predecessor_edge.resize(graph.num_nodes());

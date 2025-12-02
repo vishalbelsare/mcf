@@ -2,7 +2,7 @@
 #ifndef MCF_LOGGING_INL_HPP
 #define MCF_LOGGING_INL_HPP
 
-#include <mcf/logging.hpp>
+#include "mcf/logging.hpp"
 
 namespace mcf {
 

@@ -1,12 +1,12 @@
 // vim: expandtab:ts=2:sw=2
 #ifdef MCF_USE_Lemon
-#include <mcf/lemon_solver.hpp>
+#include "mcf/lemon_solver.hpp"
 
 #include <cassert>
 #include <cmath>
 
-#include <mcf/internal/util.hpp>
-#include <mcf/logging.hpp>
+#include "mcf/internal/util.hpp"
+#include "mcf/logging.hpp"
 
 namespace {
 

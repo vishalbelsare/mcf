@@ -2,15 +2,13 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 
-#include <map>
-#include <memory>
 #include <sstream>
 #include <stdexcept>
 
-#include <mcf/batch_processing.hpp>
-#include <mcf/graph.hpp>
-#include <mcf/k_shortest_path_solver.hpp>
-#include <mcf/logging.hpp>
+#include "mcf/batch_processing.hpp"
+#include "mcf/graph.hpp"
+#include "mcf/k_shortest_path_solver.hpp"
+#include "mcf/logging.hpp"
 
 #ifdef MCF_USE_Lemon
 #include <mcf/lemon_solver.hpp>
@@ -229,14 +227,13 @@ class PyBatchProcessing {
   AttributeMap location_attributes_;
 };
 
-PYBIND11_PLUGIN(mcf) {
-  py::module module("mcf", "A small library to solve min-cost flow networks");
-
-  module.def("set_verbose",
-             [](const bool verbose) { mcf::printer().set_verbose(verbose); },
-             "Set verbosity. If True, prints debug information to standard "
-             "output.",
-             "verbose"_a);
+PYBIND11_MODULE(mcf, module) {
+  module.def(
+      "set_verbose",
+      [](const bool verbose) { mcf::printer().set_verbose(verbose); },
+      "Set verbosity. If True, prints debug information to standard "
+      "output.",
+      "verbose"_a);
 
   module.def(
       "is_verbose", []() { return mcf::printer().is_verbose(); },
@@ -281,6 +278,4 @@ PYBIND11_PLUGIN(mcf) {
       .def("remove_inactive_tracks", &PyBatchProcessing::RemoveInactiveTracks)
       .def_property_readonly(
           "ST", [](const py::object&) { return mcf::BatchProcessing::ST; });
-
-  return module.ptr();
 }

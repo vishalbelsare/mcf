@@ -1,6 +1,5 @@
 // vim: expandtab:ts=2:sw=2
 #include <iostream>
-
 #include <mcf/graph.hpp>
 #include <mcf/k_shortest_path_solver.hpp>
 

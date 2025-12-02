@@ -2,9 +2,10 @@
 #ifndef MCF_K_SHORTEST_PATH_SOLVER_HPP
 #define MCF_K_SHORTEST_PATH_SOLVER_HPP
 
-#include <mcf/graph.hpp>
-#include <mcf/solver.hpp>
 #include <vector>
+
+#include "mcf/graph.hpp"
+#include "mcf/solver.hpp"
 
 namespace mcf {
 

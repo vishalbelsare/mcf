@@ -1,12 +1,13 @@
 // vim: expandtab:ts=2:sw=2
-#include <mcf/batch_processing.hpp>
-#include <mcf/internal/k_shortest_path.hpp>
-#include <mcf/internal/util.hpp>
+#include "mcf/batch_processing.hpp"
 
 #include <algorithm>
 #include <cassert>
 #include <sstream>
 #include <stdexcept>
+
+#include "mcf/internal/k_shortest_path.hpp"
+#include "mcf/internal/util.hpp"
 
 namespace mcf {
 

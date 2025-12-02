@@ -1,5 +1,5 @@
 // vim: expandtab:ts=2:sw=2
-#include <mcf/internal/util.hpp>
+#include "mcf/internal/util.hpp"
 
 #include <cassert>
 
